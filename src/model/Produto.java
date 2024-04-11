@@ -18,6 +18,7 @@ public class Produto {
 	}
 	
 	public void setNome (String nome) {
+		this.nome = nome;
 		
 	}
 	
@@ -50,18 +51,11 @@ public class Produto {
 	}
 	
 	public boolean verificaProdutoDisponivel (String nome) {
-		int qtdEstoque = getQtdEstoque();
-		if (qtdEstoque > 1) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.nome.equals(nome) && qtdEstoque > 0;
 	}
 	
 	public float totalValorEstoque () {
-		float valorEstoque = getPreco();
-		valorEstoque += valorEstoque;
-		return valorEstoque;
+		return preco * qtdEstoque;
 	}
 
 }

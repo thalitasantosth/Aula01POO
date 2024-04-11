@@ -5,6 +5,7 @@ public class Funcionario {
 	private String nome;
 	private double salario;
 	private String cargo;
+	private double salario_min = 1412.00;
 	
 	public Funcionario () {
 		nome = null;
@@ -18,6 +19,7 @@ public class Funcionario {
 	}
 	
 	public void setNome (String nome) {
+		this.nome = nome;
 		
 	}
 	
@@ -26,22 +28,22 @@ public class Funcionario {
 		
 	}
 	
-	public void setSalario (double salario) {
-		if (salario < 1412.00) {
-			this.salario = 1412.00;
-		} else {
-			this.salario = salario;
-		}
-		
+	public void setSalario(double salario) {
+	    if (salario < salario_min) {
+	        this.salario = salario_min;
+	    } else {
+	        this.salario = salario;
+	    }
 	}
+	
 		
-
 	public String getCargo() {
 		return cargo;
 	
 	}
 		
 	public void setCargo (String cargo) {
+		this.cargo = cargo;
 			
 	}
 	
